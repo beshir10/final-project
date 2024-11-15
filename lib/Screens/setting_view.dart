@@ -1,5 +1,7 @@
+import 'package:finalprojectaon/Screens/notification_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class SettingView extends StatefulWidget {
   const SettingView({super.key});
@@ -49,7 +51,9 @@ class _SettingViewState extends State<SettingView> {
                                     ),
                                   ]),
                               child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(NotificationView());
+                                },
                                 icon: SvgPicture.asset(
                                     'SvgIcon/notification.svg'),
                               )),
@@ -123,7 +127,13 @@ class _SettingViewState extends State<SettingView> {
               )
               )
             ],
-          )),
+          ),
+
+      ),
+
+
+
+
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:finalprojectaon/Screens/dashboard_home_view.dart';
 import 'package:finalprojectaon/Screens/home_page.dart';
 import 'package:finalprojectaon/Screens/setting_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,7 +10,7 @@ class BottomNavBar extends GetxController{
 
   RxList<Widget> Botttompages=[
     HomePage(),
-    HomePage(),
+    DashboardHomeView(),
     HomePage(),
     SettingView(),
   ].obs;
@@ -31,5 +32,6 @@ class BottomNavBar extends GetxController{
   void Onitemselected(int index){
     selectedindex.value = index;
   }
+
 
 }

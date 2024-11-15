@@ -23,7 +23,8 @@ class _BnbState extends State<Bnb> {
         children:bottomcontrol.Botttompages,
       ),
       ),
-floatingActionButton:  FloatingActionButton(onPressed: (){},
+floatingActionButton:
+FloatingActionButton(onPressed: (){},
   child: SvgPicture.asset('SvgIcon/plus.svg'),
   backgroundColor:  Color(0xff3C97AF),
   shape: RoundedRectangleBorder(
@@ -34,9 +35,12 @@ floatingActionButton:  FloatingActionButton(onPressed: (){},
 
 ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: AnimatedBottomNavigationBar(
+      bottomNavigationBar:
+      Obx(()=>
+          AnimatedBottomNavigationBar(
+        notchMargin: 14,
 
-        height: 92,
+          height: 92,
           icons: [
             Icons.home,
             Icons.dashboard,
@@ -45,10 +49,13 @@ floatingActionButton:  FloatingActionButton(onPressed: (){},
           ],
           activeIndex: bottomcontrol.selectedindex.value,
           gapLocation: GapLocation.center,
-          activeColor: Colors.blue,
-          inactiveColor: Colors.grey,
+          activeColor: Color(0xff1C4752),
+          inactiveColor: Color(0xffF8FBFC),
           backgroundColor:Color(0xffA0D2DF) ,
-          onTap: bottomcontrol.Onitemselected),
+          splashColor:Color(0xffA0D2DF) ,
+
+          onTap: bottomcontrol.Onitemselected),)
+
     );
   }
 }

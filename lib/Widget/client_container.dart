@@ -11,7 +11,8 @@ class ClientContainer extends StatefulWidget {
 class _ClientContainerState extends State<ClientContainer> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return
+      Container(
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       height: 468,
       width: 345,

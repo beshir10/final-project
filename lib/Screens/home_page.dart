@@ -1,4 +1,5 @@
 import 'package:finalprojectaon/Controller/filtter_icon_controller.dart';
+import 'package:finalprojectaon/Screens/notification_view.dart';
 import 'package:finalprojectaon/Widget/client_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomePage> {
                           CircleAvatar(
                             radius: 40,
                           ),
+                          ///name of client
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -55,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           Spacer(),
+                          ///notofication Button
                           Container(
                               height: 48,
                               width: 48,
@@ -71,7 +74,9 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ]),
                               child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(NotificationView());
+                                },
                                 icon: SvgPicture.asset(
                                     'SvgIcon/notification.svg'),
                               )),
@@ -105,11 +110,12 @@ class _HomePageState extends State<HomePage> {
                         ///search TextFormField
                         TextFormField(
                       decoration: InputDecoration(
-                        prefixIcon: SvgPicture.asset(
-                          'SvgIcon/search.svg',
-                          height: 10,
-                          width: 10,
-                          fit: BoxFit.contain,
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: SvgPicture.asset(
+                            'SvgIcon/search.svg',
+
+                          ),
                         ),
                         hintText: 'Search',
                         hintStyle: TextStyle(
@@ -119,6 +125,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20.0),
                           borderSide: BorderSide(
                             color: Color(0xffFFFFFF),
+
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
@@ -134,6 +141,7 @@ class _HomePageState extends State<HomePage> {
                             // Border width when focused
                           ),
                         ),
+
                       ),
                     ),
                   ),
@@ -145,6 +153,11 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadiusDirectional.circular(16),
+                          border: Border.all(
+                            color: filter.isselected.value?Color(0xff3C97AF):Colors.black,
+                            width: 1
+                          ),
+
                           boxShadow: [
                             BoxShadow(
                               color: Color(0xff3C97AF14),
@@ -164,7 +177,10 @@ class _HomePageState extends State<HomePage> {
                           filter.onselected();
                           print('press');
                         },
-                        icon: SvgPicture.asset('SvgIcon/filter.svg'),
+                        icon: SvgPicture.asset('SvgIcon/filter.svg',
+                          color: filter.isselected.value? Color(0xff3C97AF):Colors.black,
+
+                       ),
                       )),
                 ],
               ),
